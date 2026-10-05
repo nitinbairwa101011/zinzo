@@ -4,7 +4,7 @@ import type { Category, Product, Shop } from "@/types/models";
 import { formatDistance, formatPrice } from "@/lib/geo";
 import { ImagePlaceholder, StatusBadge, initials } from "./primitives";
 
-export function ShopCard({ shop, distanceKm, categoryLabel }: { shop: Shop; distanceKm?: number; categoryLabel?: string }) {
+export function ShopCard({ shop, distanceKm, categoryLabel }: { shop: Shop; distanceKm?: number | undefined; categoryLabel?: string | undefined }) {
   const distance = formatDistance(distanceKm);
   return (
     <Link

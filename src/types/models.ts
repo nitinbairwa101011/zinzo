@@ -11,7 +11,7 @@ export interface Category {
   id: string;
   slug: string;
   name: string;
-  subcategories?: Subcategory[];
+  subcategories?: Subcategory[] | undefined;
 }
 
 export interface Subcategory {
@@ -25,7 +25,7 @@ export type ApprovalStatus = "pending" | "approved" | "rejected";
 export interface OpeningHours {
   open: string; // "10:00"
   close: string; // "21:00"
-  weeklyClosedDay?: string; // "Tuesday"
+  weeklyClosedDay?: string | undefined; // "Tuesday"
 }
 
 export interface Shop {
@@ -33,28 +33,28 @@ export interface Shop {
   merchantId: string;
   name: string;
   categoryIds: string[];
-  description?: string;
+  description?: string | undefined;
   address: string;
   area: string;
   city: string;
-  phone?: string;
-  whatsapp?: string;
-  location?: GeoPoint;
-  hours?: OpeningHours;
-  socials?: { instagram?: string; facebook?: string };
-  logoUrl?: string;
-  coverUrl?: string;
+  phone?: string | undefined;
+  whatsapp?: string | undefined;
+  location?: GeoPoint | undefined;
+  hours?: OpeningHours | undefined;
+  socials?: { instagram?: string | undefined; facebook?: string };
+  logoUrl?: string | undefined;
+  coverUrl?: string | undefined;
   status: ApprovalStatus;
   // Reserved for the future ratings feature.
-  rating?: number;
+  rating?: number | undefined;
 }
 
 export type Availability = "in_stock" | "out_of_stock";
 
 export interface ProductVariant {
   id: string;
-  size?: string;
-  colour?: string;
+  size?: string | undefined;
+  colour?: string | undefined;
 }
 
 export interface Product {
@@ -65,7 +65,7 @@ export interface Product {
   images: string[]; // mandatory (at least one) once backend exists
   categoryId: string;
   availability: Availability;
-  variants?: ProductVariant[];
+  variants?: ProductVariant[] | undefined;
 }
 
 export interface Merchant {
@@ -73,15 +73,15 @@ export interface Merchant {
   name: string;
   phone: string;
   shopIds: string[];
-  suspended?: boolean;
+  suspended?: boolean | undefined;
 }
 
 export interface ShopApproval {
   id: string;
   shopId: string;
   status: ApprovalStatus;
-  reviewedBy?: string;
-  comment?: string;
+  reviewedBy?: string | undefined;
+  comment?: string | undefined;
   submittedAt: string;
 }
 
@@ -98,11 +98,11 @@ export interface FavoriteProduct {
 export type SortKey = "relevance" | "price_asc" | "price_desc" | "nearest";
 
 export interface ProductFilters {
-  categoryId?: string;
-  minPrice?: number;
-  maxPrice?: number;
-  size?: string;
-  colour?: string;
-  availability?: Availability;
-  maxDistanceKm?: number;
+  categoryId?: string | undefined;
+  minPrice?: number | undefined;
+  maxPrice?: number | undefined;
+  size?: string | undefined;
+  colour?: string | undefined;
+  availability?: Availability | undefined;
+  maxDistanceKm?: number | undefined;
 }
