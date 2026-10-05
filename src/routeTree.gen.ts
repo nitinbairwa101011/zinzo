@@ -10,33 +10,271 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as CategoriesRouteImport } from './routes/categories'
+import { Route as FavoritesRouteImport } from './routes/favorites'
+import { Route as MapRouteImport } from './routes/map'
+import { Route as SearchRouteImport } from './routes/search'
+import { Route as ShopsRouteImport } from './routes/shops'
+import { Route as AdminCategoriesRouteImport } from './routes/admin.categories'
+import { Route as AdminDashboardRouteImport } from './routes/admin.dashboard'
+import { Route as AdminLoginRouteImport } from './routes/admin.login'
+import { Route as AdminMerchantsRouteImport } from './routes/admin.merchants'
+import { Route as AdminProductsRouteImport } from './routes/admin.products'
+import { Route as AdminShopsRouteImport } from './routes/admin.shops'
+import { Route as MerchantDashboardRouteImport } from './routes/merchant.dashboard'
+import { Route as MerchantLoginRouteImport } from './routes/merchant.login'
+import { Route as MerchantProductsRouteImport } from './routes/merchant.products'
+import { Route as MerchantShopRouteImport } from './routes/merchant.shop'
+import { Route as MerchantSignupRouteImport } from './routes/merchant.signup'
+import { Route as ProductProductIdRouteImport } from './routes/product.$productId'
+import { Route as ShopShopIdRouteImport } from './routes/shop.$shopId'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const CategoriesRoute = CategoriesRouteImport.update({
+  id: '/categories',
+  path: '/categories',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FavoritesRoute = FavoritesRouteImport.update({
+  id: '/favorites',
+  path: '/favorites',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MapRoute = MapRouteImport.update({
+  id: '/map',
+  path: '/map',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SearchRoute = SearchRouteImport.update({
+  id: '/search',
+  path: '/search',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ShopsRoute = ShopsRouteImport.update({
+  id: '/shops',
+  path: '/shops',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdminCategoriesRoute = AdminCategoriesRouteImport.update({
+  id: '/admin/categories',
+  path: '/admin/categories',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdminDashboardRoute = AdminDashboardRouteImport.update({
+  id: '/admin/dashboard',
+  path: '/admin/dashboard',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdminLoginRoute = AdminLoginRouteImport.update({
+  id: '/admin/login',
+  path: '/admin/login',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdminMerchantsRoute = AdminMerchantsRouteImport.update({
+  id: '/admin/merchants',
+  path: '/admin/merchants',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdminProductsRoute = AdminProductsRouteImport.update({
+  id: '/admin/products',
+  path: '/admin/products',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdminShopsRoute = AdminShopsRouteImport.update({
+  id: '/admin/shops',
+  path: '/admin/shops',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MerchantDashboardRoute = MerchantDashboardRouteImport.update({
+  id: '/merchant/dashboard',
+  path: '/merchant/dashboard',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MerchantLoginRoute = MerchantLoginRouteImport.update({
+  id: '/merchant/login',
+  path: '/merchant/login',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MerchantProductsRoute = MerchantProductsRouteImport.update({
+  id: '/merchant/products',
+  path: '/merchant/products',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MerchantShopRoute = MerchantShopRouteImport.update({
+  id: '/merchant/shop',
+  path: '/merchant/shop',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MerchantSignupRoute = MerchantSignupRouteImport.update({
+  id: '/merchant/signup',
+  path: '/merchant/signup',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProductProductIdRoute = ProductProductIdRouteImport.update({
+  id: '/product/$productId',
+  path: '/product/$productId',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ShopShopIdRoute = ShopShopIdRouteImport.update({
+  id: '/shop/$shopId',
+  path: '/shop/$shopId',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/categories': typeof CategoriesRoute
+  '/favorites': typeof FavoritesRoute
+  '/map': typeof MapRoute
+  '/search': typeof SearchRoute
+  '/shops': typeof ShopsRoute
+  '/admin/categories': typeof AdminCategoriesRoute
+  '/admin/dashboard': typeof AdminDashboardRoute
+  '/admin/login': typeof AdminLoginRoute
+  '/admin/merchants': typeof AdminMerchantsRoute
+  '/admin/products': typeof AdminProductsRoute
+  '/admin/shops': typeof AdminShopsRoute
+  '/merchant/dashboard': typeof MerchantDashboardRoute
+  '/merchant/login': typeof MerchantLoginRoute
+  '/merchant/products': typeof MerchantProductsRoute
+  '/merchant/shop': typeof MerchantShopRoute
+  '/merchant/signup': typeof MerchantSignupRoute
+  '/product/$productId': typeof ProductProductIdRoute
+  '/shop/$shopId': typeof ShopShopIdRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/categories': typeof CategoriesRoute
+  '/favorites': typeof FavoritesRoute
+  '/map': typeof MapRoute
+  '/search': typeof SearchRoute
+  '/shops': typeof ShopsRoute
+  '/admin/categories': typeof AdminCategoriesRoute
+  '/admin/dashboard': typeof AdminDashboardRoute
+  '/admin/login': typeof AdminLoginRoute
+  '/admin/merchants': typeof AdminMerchantsRoute
+  '/admin/products': typeof AdminProductsRoute
+  '/admin/shops': typeof AdminShopsRoute
+  '/merchant/dashboard': typeof MerchantDashboardRoute
+  '/merchant/login': typeof MerchantLoginRoute
+  '/merchant/products': typeof MerchantProductsRoute
+  '/merchant/shop': typeof MerchantShopRoute
+  '/merchant/signup': typeof MerchantSignupRoute
+  '/product/$productId': typeof ProductProductIdRoute
+  '/shop/$shopId': typeof ShopShopIdRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/categories': typeof CategoriesRoute
+  '/favorites': typeof FavoritesRoute
+  '/map': typeof MapRoute
+  '/search': typeof SearchRoute
+  '/shops': typeof ShopsRoute
+  '/admin/categories': typeof AdminCategoriesRoute
+  '/admin/dashboard': typeof AdminDashboardRoute
+  '/admin/login': typeof AdminLoginRoute
+  '/admin/merchants': typeof AdminMerchantsRoute
+  '/admin/products': typeof AdminProductsRoute
+  '/admin/shops': typeof AdminShopsRoute
+  '/merchant/dashboard': typeof MerchantDashboardRoute
+  '/merchant/login': typeof MerchantLoginRoute
+  '/merchant/products': typeof MerchantProductsRoute
+  '/merchant/shop': typeof MerchantShopRoute
+  '/merchant/signup': typeof MerchantSignupRoute
+  '/product/$productId': typeof ProductProductIdRoute
+  '/shop/$shopId': typeof ShopShopIdRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/categories'
+    | '/favorites'
+    | '/map'
+    | '/search'
+    | '/shops'
+    | '/admin/categories'
+    | '/admin/dashboard'
+    | '/admin/login'
+    | '/admin/merchants'
+    | '/admin/products'
+    | '/admin/shops'
+    | '/merchant/dashboard'
+    | '/merchant/login'
+    | '/merchant/products'
+    | '/merchant/shop'
+    | '/merchant/signup'
+    | '/product/$productId'
+    | '/shop/$shopId'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/categories'
+    | '/favorites'
+    | '/map'
+    | '/search'
+    | '/shops'
+    | '/admin/categories'
+    | '/admin/dashboard'
+    | '/admin/login'
+    | '/admin/merchants'
+    | '/admin/products'
+    | '/admin/shops'
+    | '/merchant/dashboard'
+    | '/merchant/login'
+    | '/merchant/products'
+    | '/merchant/shop'
+    | '/merchant/signup'
+    | '/product/$productId'
+    | '/shop/$shopId'
+  id:
+    | '__root__'
+    | '/'
+    | '/categories'
+    | '/favorites'
+    | '/map'
+    | '/search'
+    | '/shops'
+    | '/admin/categories'
+    | '/admin/dashboard'
+    | '/admin/login'
+    | '/admin/merchants'
+    | '/admin/products'
+    | '/admin/shops'
+    | '/merchant/dashboard'
+    | '/merchant/login'
+    | '/merchant/products'
+    | '/merchant/shop'
+    | '/merchant/signup'
+    | '/product/$productId'
+    | '/shop/$shopId'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  CategoriesRoute: typeof CategoriesRoute
+  FavoritesRoute: typeof FavoritesRoute
+  MapRoute: typeof MapRoute
+  SearchRoute: typeof SearchRoute
+  ShopsRoute: typeof ShopsRoute
+  AdminCategoriesRoute: typeof AdminCategoriesRoute
+  AdminDashboardRoute: typeof AdminDashboardRoute
+  AdminLoginRoute: typeof AdminLoginRoute
+  AdminMerchantsRoute: typeof AdminMerchantsRoute
+  AdminProductsRoute: typeof AdminProductsRoute
+  AdminShopsRoute: typeof AdminShopsRoute
+  MerchantDashboardRoute: typeof MerchantDashboardRoute
+  MerchantLoginRoute: typeof MerchantLoginRoute
+  MerchantProductsRoute: typeof MerchantProductsRoute
+  MerchantShopRoute: typeof MerchantShopRoute
+  MerchantSignupRoute: typeof MerchantSignupRoute
+  ProductProductIdRoute: typeof ProductProductIdRoute
+  ShopShopIdRoute: typeof ShopShopIdRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +286,155 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/categories': {
+      id: '/categories'
+      path: '/categories'
+      fullPath: '/categories'
+      preLoaderRoute: typeof CategoriesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/favorites': {
+      id: '/favorites'
+      path: '/favorites'
+      fullPath: '/favorites'
+      preLoaderRoute: typeof FavoritesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/map': {
+      id: '/map'
+      path: '/map'
+      fullPath: '/map'
+      preLoaderRoute: typeof MapRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/search': {
+      id: '/search'
+      path: '/search'
+      fullPath: '/search'
+      preLoaderRoute: typeof SearchRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/shops': {
+      id: '/shops'
+      path: '/shops'
+      fullPath: '/shops'
+      preLoaderRoute: typeof ShopsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/admin/categories': {
+      id: '/admin/categories'
+      path: '/admin/categories'
+      fullPath: '/admin/categories'
+      preLoaderRoute: typeof AdminCategoriesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/admin/dashboard': {
+      id: '/admin/dashboard'
+      path: '/admin/dashboard'
+      fullPath: '/admin/dashboard'
+      preLoaderRoute: typeof AdminDashboardRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/admin/login': {
+      id: '/admin/login'
+      path: '/admin/login'
+      fullPath: '/admin/login'
+      preLoaderRoute: typeof AdminLoginRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/admin/merchants': {
+      id: '/admin/merchants'
+      path: '/admin/merchants'
+      fullPath: '/admin/merchants'
+      preLoaderRoute: typeof AdminMerchantsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/admin/products': {
+      id: '/admin/products'
+      path: '/admin/products'
+      fullPath: '/admin/products'
+      preLoaderRoute: typeof AdminProductsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/admin/shops': {
+      id: '/admin/shops'
+      path: '/admin/shops'
+      fullPath: '/admin/shops'
+      preLoaderRoute: typeof AdminShopsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/merchant/dashboard': {
+      id: '/merchant/dashboard'
+      path: '/merchant/dashboard'
+      fullPath: '/merchant/dashboard'
+      preLoaderRoute: typeof MerchantDashboardRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/merchant/login': {
+      id: '/merchant/login'
+      path: '/merchant/login'
+      fullPath: '/merchant/login'
+      preLoaderRoute: typeof MerchantLoginRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/merchant/products': {
+      id: '/merchant/products'
+      path: '/merchant/products'
+      fullPath: '/merchant/products'
+      preLoaderRoute: typeof MerchantProductsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/merchant/shop': {
+      id: '/merchant/shop'
+      path: '/merchant/shop'
+      fullPath: '/merchant/shop'
+      preLoaderRoute: typeof MerchantShopRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/merchant/signup': {
+      id: '/merchant/signup'
+      path: '/merchant/signup'
+      fullPath: '/merchant/signup'
+      preLoaderRoute: typeof MerchantSignupRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/product/$productId': {
+      id: '/product/$productId'
+      path: '/product/$productId'
+      fullPath: '/product/$productId'
+      preLoaderRoute: typeof ProductProductIdRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/shop/$shopId': {
+      id: '/shop/$shopId'
+      path: '/shop/$shopId'
+      fullPath: '/shop/$shopId'
+      preLoaderRoute: typeof ShopShopIdRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  CategoriesRoute: CategoriesRoute,
+  FavoritesRoute: FavoritesRoute,
+  MapRoute: MapRoute,
+  SearchRoute: SearchRoute,
+  ShopsRoute: ShopsRoute,
+  AdminCategoriesRoute: AdminCategoriesRoute,
+  AdminDashboardRoute: AdminDashboardRoute,
+  AdminLoginRoute: AdminLoginRoute,
+  AdminMerchantsRoute: AdminMerchantsRoute,
+  AdminProductsRoute: AdminProductsRoute,
+  AdminShopsRoute: AdminShopsRoute,
+  MerchantDashboardRoute: MerchantDashboardRoute,
+  MerchantLoginRoute: MerchantLoginRoute,
+  MerchantProductsRoute: MerchantProductsRoute,
+  MerchantShopRoute: MerchantShopRoute,
+  MerchantSignupRoute: MerchantSignupRoute,
+  ProductProductIdRoute: ProductProductIdRoute,
+  ShopShopIdRoute: ShopShopIdRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
