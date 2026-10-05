@@ -8,7 +8,7 @@ import { listCategories } from "@/lib/catalog";
 import type { ProductFilters, SortKey } from "@/types/models";
 import { cn } from "@/lib/utils";
 
-export function SearchBar({ defaultValue = "", size = "md" }: { defaultValue?: string; size?: "md" | "lg" }) {
+export function SearchBar({ defaultValue = "", size = "md" }: { defaultValue?: string | undefined; size?: "md" | "lg" }) {
   const [q, setQ] = useState(defaultValue);
   const navigate = useNavigate();
   const submit = (e: FormEvent) => {

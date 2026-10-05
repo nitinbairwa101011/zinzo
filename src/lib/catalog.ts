@@ -40,10 +40,10 @@ export function shopName(id: string) {
 }
 
 export interface SearchParams {
-  q?: string;
-  sort?: SortKey;
-  filters?: ProductFilters;
-  origin?: GeoPoint | null;
+  q?: string | undefined;
+  sort?: SortKey | undefined;
+  filters?: ProductFilters | undefined;
+  origin?: GeoPoint | null | undefined;
 }
 
 export function searchProducts({ q, sort = "relevance", filters = {}, origin }: SearchParams): Product[] {
