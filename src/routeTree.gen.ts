@@ -10,33 +10,128 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as CategoriesRouteImport } from './routes/categories'
+import { Route as FavoritesRouteImport } from './routes/favorites'
+import { Route as MapRouteImport } from './routes/map'
+import { Route as SearchRouteImport } from './routes/search'
+import { Route as ShopsRouteImport } from './routes/shops'
+import { Route as ProductProductIdRouteImport } from './routes/product.$productId'
+import { Route as ShopShopIdRouteImport } from './routes/shop.$shopId'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const CategoriesRoute = CategoriesRouteImport.update({
+  id: '/categories',
+  path: '/categories',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FavoritesRoute = FavoritesRouteImport.update({
+  id: '/favorites',
+  path: '/favorites',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MapRoute = MapRouteImport.update({
+  id: '/map',
+  path: '/map',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SearchRoute = SearchRouteImport.update({
+  id: '/search',
+  path: '/search',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ShopsRoute = ShopsRouteImport.update({
+  id: '/shops',
+  path: '/shops',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProductProductIdRoute = ProductProductIdRouteImport.update({
+  id: '/product/$productId',
+  path: '/product/$productId',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ShopShopIdRoute = ShopShopIdRouteImport.update({
+  id: '/shop/$shopId',
+  path: '/shop/$shopId',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/categories': typeof CategoriesRoute
+  '/favorites': typeof FavoritesRoute
+  '/map': typeof MapRoute
+  '/search': typeof SearchRoute
+  '/shops': typeof ShopsRoute
+  '/product/$productId': typeof ProductProductIdRoute
+  '/shop/$shopId': typeof ShopShopIdRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/categories': typeof CategoriesRoute
+  '/favorites': typeof FavoritesRoute
+  '/map': typeof MapRoute
+  '/search': typeof SearchRoute
+  '/shops': typeof ShopsRoute
+  '/product/$productId': typeof ProductProductIdRoute
+  '/shop/$shopId': typeof ShopShopIdRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/categories': typeof CategoriesRoute
+  '/favorites': typeof FavoritesRoute
+  '/map': typeof MapRoute
+  '/search': typeof SearchRoute
+  '/shops': typeof ShopsRoute
+  '/product/$productId': typeof ProductProductIdRoute
+  '/shop/$shopId': typeof ShopShopIdRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/categories'
+    | '/favorites'
+    | '/map'
+    | '/search'
+    | '/shops'
+    | '/product/$productId'
+    | '/shop/$shopId'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/categories'
+    | '/favorites'
+    | '/map'
+    | '/search'
+    | '/shops'
+    | '/product/$productId'
+    | '/shop/$shopId'
+  id:
+    | '__root__'
+    | '/'
+    | '/categories'
+    | '/favorites'
+    | '/map'
+    | '/search'
+    | '/shops'
+    | '/product/$productId'
+    | '/shop/$shopId'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  CategoriesRoute: typeof CategoriesRoute
+  FavoritesRoute: typeof FavoritesRoute
+  MapRoute: typeof MapRoute
+  SearchRoute: typeof SearchRoute
+  ShopsRoute: typeof ShopsRoute
+  ProductProductIdRoute: typeof ProductProductIdRoute
+  ShopShopIdRoute: typeof ShopShopIdRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +143,67 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/categories': {
+      id: '/categories'
+      path: '/categories'
+      fullPath: '/categories'
+      preLoaderRoute: typeof CategoriesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/favorites': {
+      id: '/favorites'
+      path: '/favorites'
+      fullPath: '/favorites'
+      preLoaderRoute: typeof FavoritesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/map': {
+      id: '/map'
+      path: '/map'
+      fullPath: '/map'
+      preLoaderRoute: typeof MapRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/search': {
+      id: '/search'
+      path: '/search'
+      fullPath: '/search'
+      preLoaderRoute: typeof SearchRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/shops': {
+      id: '/shops'
+      path: '/shops'
+      fullPath: '/shops'
+      preLoaderRoute: typeof ShopsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/product/$productId': {
+      id: '/product/$productId'
+      path: '/product/$productId'
+      fullPath: '/product/$productId'
+      preLoaderRoute: typeof ProductProductIdRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/shop/$shopId': {
+      id: '/shop/$shopId'
+      path: '/shop/$shopId'
+      fullPath: '/shop/$shopId'
+      preLoaderRoute: typeof ShopShopIdRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  CategoriesRoute: CategoriesRoute,
+  FavoritesRoute: FavoritesRoute,
+  MapRoute: MapRoute,
+  SearchRoute: SearchRoute,
+  ShopsRoute: ShopsRoute,
+  ProductProductIdRoute: ProductProductIdRoute,
+  ShopShopIdRoute: ShopShopIdRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
